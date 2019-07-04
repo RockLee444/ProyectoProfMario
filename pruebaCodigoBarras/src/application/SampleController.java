@@ -22,7 +22,7 @@ public class SampleController {
 		codigoSTR="";
 		Random r = new Random();
 		for (int i = 0; i < 8; i++) {
-			codigoSTR=codigoSTR+Math.abs((r.nextInt()%9));
+			codigoSTR=codigoSTR+Math.abs((r.nextInt()%10));
 		}
 		   try {
 		        codigo = BarcodeFactory.createCode128(codigoSTR);//Reemplazar esto por el valor que deseen
