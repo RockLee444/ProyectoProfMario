@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="moduloventa.ModuloVentaController">
+   <children>
+      <TableView fx:id="table" layoutY="270.0" prefHeight="225.0" prefWidth="1000.0">
+        <columns>
+            <TableColumn fx:id="codigo" editable="false" prefWidth="275.0" text="Código">
+                <cellValueFactory>
+                  <PropertyValueFactory property="codigo" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="nombre" editable="false" prefWidth="410.0" text="Nombre">
+                <cellValueFactory>
+                  <PropertyValueFactory property="nombre" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="cantidad" editable="false" minWidth="6.0" prefWidth="166.0" text="Cantidad">
+                <cellValueFactory>
+                  <PropertyValueFactory property="totalAComprar" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="precio" editable="false" minWidth="2.0" prefWidth="148.0" text="Precio unitario">
+                <cellValueFactory>
+                  <PropertyValueFactory property="precio" />
+               </cellValueFactory>
+            </TableColumn>
+        </columns>
+      </TableView>
+      <Label fx:id="subTotalLabel" layoutX="724.0" layoutY="503.0" text="SUBTOTAL: $">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <Label fx:id="ivaLabel" layoutX="749.0" layoutY="540.0" text="IVA: $">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <Label fx:id="totalLabel" layoutX="738.0" layoutY="584.0" text="TOTAL: $">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <TextField fx:id="fieldCodigo" layoutX="30.0" layoutY="57.0" promptText="Código del producto" />
+      <TextField fx:id="fieldCantidad" layoutX="203.0" layoutY="57.0" promptText="Cantidad" />
+      <Label layoutX="30.0" layoutY="14.0" text="Escanee el código de barras o ingrese los datos del producto" />
+      <Button fx:id="botonEditar" layoutX="165.0" layoutY="111.0" mnemonicParsing="false" onAction="#editarProducto" prefHeight="25.0" prefWidth="113.0" text="Editar producto" />
+      <Button fx:id="botonEliminar" layoutX="30.0" layoutY="155.0" mnemonicParsing="false" onAction="#eliminarProducto" text="Eliminar producto" />
+      <Button fx:id="botonComprar" layoutX="733.0" layoutY="627.0" mnemonicParsing="false" onAction="#comprarProductos" text="COMPRAR" />
+      <Button fx:id="botonAgregar" layoutX="30.0" layoutY="111.0" mnemonicParsing="false" onAction="#agregarProducto" text="Agregar producto" />
+      <ImageView fitHeight="140.0" fitWidth="200.0" layoutX="52.0" layoutY="528.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/fox.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="botonCancelarSeleccion" layoutX="165.0" layoutY="155.0" mnemonicParsing="false" onAction="#cancelarSeleccion" text="Cancelar selección" />
+      <Button layoutX="301.0" layoutY="130.0" mnemonicParsing="false" onAction="#buscarProducto" text="Buscar producto" />
+   </children>
+</AnchorPane>
