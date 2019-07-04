@@ -21,15 +21,15 @@ public class SampleController {
 	public void generarCodigo(){
 		codigoSTR="";
 		Random r = new Random();
-		for (int i = 0; i < 9; i++) {
+		for (int i = 0; i < 8; i++) {
 			codigoSTR=codigoSTR+Math.abs((r.nextInt()%9));
 		}
 		   try {
-		        codigo = BarcodeFactory.createCode39(codigoSTR, true);//Reemplazar esto por el valor que deseen
+		        codigo = BarcodeFactory.createCode128(codigoSTR);//Reemplazar esto por el valor que deseen
 		    } catch (BarcodeException e) {
 		    }
-		    codigo.setDrawingText(true);//determina si se agrega o no el número codificado debajo del código de barras
-		    //tamaño de la barra
+		    codigo.setDrawingText(true);//determina si se agrega o no el nÃºmero codificado debajo del cÃ³digo de barras
+		    //tamaÃ±o de la barra
 		       codigo.setBarWidth(2);
 		       codigo.setBarHeight(60);
 		  
